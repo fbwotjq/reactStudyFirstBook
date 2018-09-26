@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import classNames from 'classnames/bind'
 //import styles from './App.css';
 import styles from './App.scss';
-import Button from './components/Button';
+//import Button from './components/Button';
+import StyledButton from './components/Button/StyledButton';
 
 console.log(styles);
 const cx = classNames.bind(styles);
@@ -16,6 +17,7 @@ class App extends Component {
       <div className={cx('box', { blue: isBlue })}>
         <div className={cx('box-inside')}></div>
         {/*<Button>버튼</Button> */}
+        <StyledButton big={true}>버튼</StyledButton>
       </div>
     );
   }
