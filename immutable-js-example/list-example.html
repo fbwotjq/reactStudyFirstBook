@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/immutable/3.7.3/immutable.min.js"></script>
+        <script>
+            const { List, Map, fromJS } = Immutable;
+
+            const list = List([
+                Map({value: 1}),
+                Map({value: 2})
+            ]);
+            console.log(list.toJS());
+            const list2 = fromJS([
+                {value: 1},
+                {value: 2}
+            ]);
+            console.log(list2.toJS());
+
+            console.log(list.get(0));
+
+            console.log(list.getIn([0, 'value']));
+
+            console.log(list.set(0, Map({value: 10})).toJS());
+
+            console.log(list.setIn([0, 'value'], 10).toJS());
+
+            console.log(list.update(0, item => item.set('value', item.get('value') * 5)).toJS());
+
+            console.log(list.push(Map({value: 3})).toJS());
+
+            console.log(list.unshift(Map({value: 2})).toJS());
+
+            console.log(list.delete(1).toJS());
+
+            console.log(list.pop().toJS());
+
+            console.log(list.size);
+
+            console.log(list.isEmpty());
+        </script>
+    </body>
+</html>
